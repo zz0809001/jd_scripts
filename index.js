@@ -7,11 +7,11 @@ exports.main_handler = async (event, context, callback) => {
       console.log(v);
       var request = require('request');
       //1.执行自己上传的js文件
-      delete require.cache[require.resolve('./'+v+'.js')];
-      require('./'+v+'.js')
+      //delete require.cache[require.resolve('./'+v+'.js')];
+      //require('./'+v+'.js')
 
       //2.执行国内gitee远端js文件如果部署，在国内节点，选择1或2的方式
-      //request('https://gitee.com/lxk0301/jd_scripts/raw/master/'+v+'.js', function (error, response, body) {
+      //request('https://gitee.com/zhu-zijie00/jd_scripts/raw/main/'+v+'.js', function (error, response, body) {
       //eval(response.body)
       //})
 
@@ -19,9 +19,7 @@ exports.main_handler = async (event, context, callback) => {
       //request('https://raw.githubusercontent.com/LXK9301/jd_scripts/master/' + v + '.js', function (error, response, body) {
       //eval(response.body)
       //})
-      //request('https://jdsharedresourcescdn.azureedge.net/jdresource/' + v + '.js', function (error, response, body) {
-      //eval(response.body)
-      //})
+
     }
   } catch (e) {
     console.error(e)
